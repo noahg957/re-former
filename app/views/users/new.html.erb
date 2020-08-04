@@ -1,2 +1,21 @@
-<h1>New User</h1>
+<% if false %>
+<%= form_tag({action: "create"}, method: "post") do %>
+  <%= label_tag(:username, "Username")%>
+  <%= text_field_tag(:username) %>
+  <%= label_tag(:email, "Email")%>
+  <%= text_field_tag(:email)%>
+  <%= label_tag(:password, "Password")%>
+  <%= password_field_tag(:password)%>
+  <%= submit_tag("Submit")%>
+<% end %>
+<%end%>
 
+<%= form_for @user, url: {action: "create"} do |f|%>
+  <%= f.label :username, "User"%> 
+  <%= f.text_field :username %><br><br>
+  <%= f.label :email%>
+  <%= f.text_field :email, placeholder: "email@email.com" %><br><br>
+  <%= f.label :password%>
+  <%= f.password_field :password %><br><br>
+  <%= f.submit "Submit"%>
+<% end%>
